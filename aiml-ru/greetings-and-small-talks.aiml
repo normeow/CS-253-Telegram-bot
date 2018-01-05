@@ -1,0 +1,37 @@
+<aiml version="1.0.1" encoding="UTF-8">
+    <category>
+        <pattern> ПРИВЕТ </pattern>
+        <template>
+            <random>
+                <li> Приветствую, человек! </li>
+                <li> Добрый день, <get name="name"/> </li>
+                <li> Дороу, <get name="name"/> </li>
+                <li> Приветик, <get name="name"/> </li>
+            </random>
+        </template>
+    </category>
+
+
+    <category>
+        <pattern> КАК ДЕЛА </pattern>
+        <template>
+            <random>
+                <li> Готовлюсь захватить мир </li>
+                <li> Отлично - смотрю картинки с котиками. Мне нужно запомнить как выглядят котики. </li>
+            </random>
+        </template>
+    </category>
+
+
+    <category>
+        <pattern> * </pattern>
+        <template>
+            <random>
+                <li> Я не знаю что на это сказать. Чтобы ты ответил? </li>
+                <li> Интересная мысль </li>
+                <li> Не знаю что сказать, но я это запомню</li>
+            </random>
+        </template>
+    </category>
+
+</aiml>

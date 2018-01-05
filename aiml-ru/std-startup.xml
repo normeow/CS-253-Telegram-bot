@@ -1,0 +1,14 @@
+<aiml version="1.0.1" encoding="UTF-8">
+    <!-- std-std-startup.xml -->
+
+    <category>
+
+        <pattern>LOAD AIML BOT</pattern>
+
+        <template>
+            <learn>aiml-ru/greetings-and-small-talks.aiml</learn>
+        </template>
+
+    </category>
+
+</aiml>

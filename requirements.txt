@@ -1,0 +1,14 @@
+cycler==0.10.0
+dill==0.2.7.1
+numpy==1.13.1
+olefile==0.44
+Pillow==4.2.1
+pyparsing==2.2.0
+pyreadline==2.1
+python-dateutil==2.6.1
+pytz==2017.2
+six==1.11.0
+pyTelegramBotAPI==3.5.1
+Flask==0.12.2
+python-aiml==0.9.1
+clarifai==2.0.32
