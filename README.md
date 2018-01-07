@@ -1,6 +1,8 @@
 # CS-253-Telegram-bot
 
-Telegram Bot [Jimmy](https://t.me/jimmy_cs_253_bot) created for educational purposes.  AIML inside
+Telegram Bot Jimmy created for educational purposes.  AIML inside
+
+Talk to him: [@jimmy_cs_253_bot](https://t.me/jimmy_cs_253_bot)
 
 ## Dependecies ##
 
