@@ -1,6 +1,6 @@
 <aiml version="1.0.1" encoding="UTF-8">
     <category>
-        <pattern> Hello </pattern>
+        <pattern> HELLO </pattern>
         <template>
             <random>
                 <li> Hi to the human! </li>
@@ -11,11 +11,33 @@
     </category>
 
     <category>
-        <pattern> How are *u</pattern>
+        <pattern> HOW ARE YOU </pattern>
         <template>
             <random>
                 <li> Better then yesterday, u? </li>
                 <li> Great, I'm learning to label images. Send me one to know what I see</li>
+            </random>
+        </template>
+    </category>
+
+
+    <category>
+        <pattern> WHY </pattern>
+        <template>
+            <random>
+                <li> Don't ask me  </li>
+                <li> Just because </li>
+            </random>
+        </template>
+    </category>
+
+
+    <category>
+        <pattern> BYE </pattern>
+        <template>
+            <random>
+                <li> See you soon </li>
+                <li> Goodbye. Have a nice day, human :) </li>
             </random>
         </template>
     </category>

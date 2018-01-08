@@ -20,6 +20,8 @@ def load_kernel(learn_file):
 load_kernel(aiml_path_en + "std-startup.xml")
 bot = telebot.TeleBot(config.token)
 
+LANG_KEY_CLARIFAI = 'en'
+
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -29,26 +31,25 @@ def start(message):
 
 @bot.message_handler(commands=['switchlang'])
 def switchlang(message):
+    global LANG_KEY_CLARIFAI
     config.lang_en = not config.lang_en
     if config.lang_en:
         load_kernel(aiml_path_en + "std-startup.xml")
+        LANG_KEY_CLARIFAI = 'en'
     else:
         load_kernel(aiml_path_ru + "std-startup.xml")
+        LANG_KEY_CLARIFAI = 'ru'
+
+
+    kernel.setPredicate("name", message.from_user.first_name)
 
 
 @bot.message_handler(func=lambda message: True, content_types=["text"])
 def echo(message):
-    print("receive message:", message)
-    input_text = message.text
-    response = kernel.respond(input_text)
-    bot.send_message(message.chat.id, response)
-
-
-@bot.message_handler(func=lambda message: True, content_types=["text"])
-def reply(message):
     kernel.setPredicate("name", message.from_user.first_name)
     input_text = message.text
-    response = "The AIML answer is:\n" + kernel.respond(input_text)
+    response = kernel.respond(input_text)
+    print("Message:\n{}\nresponse:\n{}".format(input_text, response))
     bot.send_message(message.chat.id, response)
 
 
@@ -61,9 +62,11 @@ def picture_handler(message):
     # print("file info:", file_info)
     file_path = "https://api.telegram.org/file/bot{}/{}".format(config.token, file_info.file_path)
 
-    res = model.predict_by_url(url=file_path)
+    res = model.predict_by_url(url=file_path, lang=LANG_KEY_CLARIFAI)
     tags = res['outputs'][0]['data']['concepts']
     answer = "Думаю на этой картинке:\n"
+    if config.lang_en:
+        answer = "I guess here:\n"
     for tag in tags[:5]:
         answer += "{}: {:.2%}\n".format(tag["name"], tag["value"])
     bot.send_message(message.chat.id, answer)

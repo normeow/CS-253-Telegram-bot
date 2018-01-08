@@ -5,8 +5,6 @@
             <random>
                 <li> Приветствую, человек! </li>
                 <li> Добрый день, <get name="name"/> </li>
-                <li> Дороу, <get name="name"/> </li>
-                <li> Приветик, <get name="name"/> </li>
             </random>
         </template>
     </category>
@@ -24,10 +22,31 @@
 
 
     <category>
+        <pattern> ЗАЧЕМ </pattern>
+        <template>
+            <random>
+                <li> Так надо </li>
+                <li> Не скажу </li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern> ПОКА </pattern>
+        <template>
+            <random>
+                <li> Возвращайся завтра. Может, я научусь узнавать погоду. </li>
+                <li> Пока </li>
+                <li> Не бросай меня здесь, человек :( </li>
+            </random>
+        </template>
+    </category>
+
+    <category>
         <pattern> * </pattern>
         <template>
             <random>
-                <li> Я не знаю что на это сказать. Чтобы ты ответил? </li>
+                <li> Я не понимаю. Пришли мне картинки </li>
                 <li> Интересная мысль </li>
                 <li> Не знаю что сказать, но я это запомню</li>
             </random>
